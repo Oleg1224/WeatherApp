@@ -59,6 +59,11 @@ function allInfoWeather() {
     })
     .catch(error => {
         console.log(error)
+        if(error) {
+            let div = document.querySelector('.infoWeathe')
+            div.innerHTML=''
+            alert('There is no such place!')
+        }
     })
 }
 btn.addEventListener('click', allInfoWeather)
