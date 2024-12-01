@@ -1,5 +1,5 @@
 let btn = document.querySelector('.btn');
-btn.addEventListener('click', function() {
+function allInfoWeather() {
     let input = document.querySelector('.city');
     let inputValue = input.value
     let APIKEY = 'ae116c054d60dd3dee7f688e2325540e'
@@ -56,9 +56,14 @@ btn.addEventListener('click', function() {
         boxCloud.appendChild(cloudh2)
         boxCloud.className='boxCloud'
         console.log(value)
-        /* Cloudiness */
     })
     .catch(error => {
         console.log(error)
     })
+}
+btn.addEventListener('click', allInfoWeather)
+document.addEventListener('keydown', function() {
+    if(event.key==='Enter') {
+        allInfoWeather()
+    }
 })
