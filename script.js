@@ -62,6 +62,7 @@ function allInfoWeather() {
         else {
             div.classList.remove('new')
         }
+        this.blur()
         /* if(div.style.transform.scale=1) {
             div.classList.add('new')
         } */
