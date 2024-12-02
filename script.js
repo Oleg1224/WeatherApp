@@ -13,7 +13,10 @@ function allInfoWeather() {
     .then(value => {
         /* div в котом хранится вся информация про погоду */
         let div = document.querySelector('.infoWeathe')
-        if(div!=='') {
+        div.style.transform = 'scale(0)';
+        setTimeout(()=>{
+        div.innerHTML=''
+        if(div.innerHTML!=='') {
             div.innerHTML=''
         }
         let h2 = document.createElement('h2')
@@ -55,6 +58,8 @@ function allInfoWeather() {
         cloudh2.textContent='Cloudiness: '+value.clouds.all
         boxCloud.appendChild(cloudh2)
         boxCloud.className='boxCloud'
+        div.style.transform = 'scale(1)';
+        }, 500)
         console.log(value)
         if(div.className==='infoWeathe') {
             div.classList.add('new')
