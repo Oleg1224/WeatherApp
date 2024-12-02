@@ -56,6 +56,15 @@ function allInfoWeather() {
         boxCloud.appendChild(cloudh2)
         boxCloud.className='boxCloud'
         console.log(value)
+        if(div.className==='infoWeathe') {
+            div.classList.add('new')
+        }
+        else {
+            div.classList.remove('new')
+        }
+        /* if(div.style.transform.scale=1) {
+            div.classList.add('new')
+        } */
     })
     .catch(error => {
         console.log(error)
