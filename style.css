@@ -33,7 +33,7 @@
 body {
     /* background: rgb(31, 113, 181); */
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/Cumulus_humilis_clouds_in_Ukraine.jpg);
-    background-image: url(https://st2.depositphotos.com/1162190/6186/i/450/depositphotos_61868743-stock-photo-weather-forecast-concept.jpg);
+    /* background-image: url(); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -133,6 +133,127 @@ body {
 }
 .infoWeathe.new {
     transform: scale(1);
+}
+.title_icon {
+    width: 80px;
+}
+.header {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.box_comments {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    background: #575252;
+    margin-top: 50px;
+    border-radius: 15px;
+    transition: 1s;
+    margin-bottom: 30px;
+}
+.comments_title {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    font-family: Arial;
+}
+.comments {
+    border-radius: 10px;
+    padding: 10px;
+    width: 400px;
+    height: 150px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    resize: none;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 900;
+}
+.comments_name {
+    padding: 10px;
+    width: 380px;
+    border-radius: 10px;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 900;
+}
+.send {
+    width: 400px;
+    text-align: center;
+    background: green;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+    font-family: Arial;
+}
+.right_comments {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: Arial;
+    background-image: url(https://img.freepik.com/free-vector/cartoon-style-paper-cloud-atmosphere-backdrop-design_1017-56269.jpg?semt=ais_hybrid);
+    background-size: cover;
+    font-weight: 900;
+    background-position: center;
+    /* -webkit-text-stroke: 1px black; */
+    border-radius: 10px;
+    padding: 10px;
+}
+.randomDiv {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: Arial;
+    background-image: url(https://img.freepik.com/free-vector/cartoon-style-paper-cloud-atmosphere-backdrop-design_1017-56269.jpg?semt=ais_hybrid);
+    background-size: cover;
+    font-weight: 900;
+    background-position: center;
+    /* -webkit-text-stroke: 1px black; */
+    border-radius: 10px;
+    padding: 10px;
+}
+.name {
+}
+.user_comment {
+}
+.allUser_comments {
+    width: 360px;
+    overflow-y: scroll;
+    height: 0px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #478b919d;
+    display: flex;
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: start;
+    overflow-x: hidden;
+    gap: 20px;
+}
+.allUser_comments.show {
+    height: 150px;
+}
+.allUser_comments.shows {
+    height: 150px;
 }
 /* Стилі для великих екранів (дисплей максимум 1199рх) */
 @media (max-width: 1199px) {

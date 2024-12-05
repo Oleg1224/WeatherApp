@@ -59,6 +59,7 @@ function allInfoWeather() {
         boxCloud.appendChild(cloudh2)
         boxCloud.className='boxCloud'
         div.style.transform = 'scale(1)';
+        input.value=''
         }, 500)
         console.log(value)
         if(div.className==='infoWeathe') {
@@ -74,11 +75,9 @@ function allInfoWeather() {
     })
     .catch(error => {
         console.log(error)
-        if(error) {
-            let div = document.querySelector('.infoWeathe')
-            div.innerHTML=''
-            alert('There is no such place!')
-        }
+        let div = document.querySelector('.infoWeathe')
+        div.innerHTML=''
+        alert('There is no such place!')
     })
 }
 btn.addEventListener('click', allInfoWeather)
@@ -87,3 +86,70 @@ document.addEventListener('keydown', function() {
         allInfoWeather()
     }
 })
+let comments = document.querySelector('.comments');
+let commentsName = document.querySelector('.comments_name');
+let send = document.querySelector('.send')
+function Comments() {
+    let commentsValue = comments.value
+    let commentsNameValue = commentsName.value
+    localStorage.setItem('name', commentsNameValue)
+    localStorage.setItem('comment', commentsValue)
+    /* let name = document.querySelector('.name')
+    let userComment = document.querySelector('.user_comment') */
+    let allUserComments = document.querySelector('.allUser_comments')
+    let userDiv = document.createElement('div')
+    let userName = document.createElement('h2')
+    let userComment = document.createElement('h2')
+    allUserComments.append(userDiv)
+    userDiv.appendChild(userName)
+    userDiv.appendChild(userComment)
+    let getLocalName = localStorage.getItem('name')
+    let getLocalComment = localStorage.getItem('comment')
+    userName.textContent='Name: ' + getLocalName
+    userComment.textContent='Comment: ' + getLocalComment
+    userDiv.className='right_comments'
+    userName.className='name'
+    userComment.className='user_comment'
+    /* allUserComments.classList.add('shows'); */
+    if(commentsValue==='' && commentsNameValue==='') {
+        alert('You did not enter a comment or name')
+        allUserComments.removeChild(userDiv)
+    }
+    else {
+        comments.value = '';
+        commentsName.value = '';
+    }
+}
+send.addEventListener('click', Comments)
+window.addEventListener('keydown', function() {
+    if(event.key==='Enter') {
+        Comments()
+    }
+})
+
+const commentsArray = [
+    { name: "Алексей", comment: "Отличная работа!" },
+    { name: "Мария", comment: "Мне это понравилось." },
+    { name: "Иван", comment: "Нужно больше деталей." },
+    { name: "Ольга", comment: "Супер, продолжайте в том же духе!" }
+];
+function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+function createCommentDiv() {
+    const { name, comment } = getRandomElement(commentsArray);
+    const randomDiv = document.createElement('div');
+    randomDiv.className='randomDiv'
+    /* randomDiv.classList.add('show') */
+    const h2Name = document.createElement('h2');
+    h2Name.textContent = `Name: ${name}`;
+    randomDiv.appendChild(h2Name);
+    const h2Comment = document.createElement('h2');
+    h2Comment.textContent = `Comment: ${comment}`;
+    randomDiv.appendChild(h2Comment);
+    let allUserComments = document.querySelector('.allUser_comments')
+    allUserComments.appendChild(randomDiv)
+    /* allUserComments.classList.add('show'); */
+    /* document.getElementById('container').appendChild(div); */
+}
+setInterval(createCommentDiv, 5000);
