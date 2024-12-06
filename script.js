@@ -69,9 +69,6 @@ function allInfoWeather() {
             div.classList.remove('new')
         }
         input.blur()
-        /* if(div.style.transform.scale=1) {
-            div.classList.add('new')
-        } */
     })
     .catch(error => {
         console.log(error)
@@ -100,7 +97,7 @@ function Comments() {
     let userDiv = document.createElement('div')
     let userName = document.createElement('h2')
     let userComment = document.createElement('h2')
-    allUserComments.append(userDiv)
+    allUserComments.appendChild(userDiv)
     userDiv.appendChild(userName)
     userDiv.appendChild(userComment)
     let getLocalName = localStorage.getItem('name')
@@ -110,7 +107,6 @@ function Comments() {
     userDiv.className='right_comments'
     userName.className='name'
     userComment.className='user_comment'
-    /* allUserComments.classList.add('shows'); */
     if(commentsValue==='' && commentsNameValue==='') {
         alert('You did not enter a comment or name')
         allUserComments.removeChild(userDiv)
@@ -131,7 +127,13 @@ const commentsArray = [
     { name: "Алексей", comment: "Отличная работа!" },
     { name: "Мария", comment: "Мне это понравилось." },
     { name: "Иван", comment: "Нужно больше деталей." },
-    { name: "Ольга", comment: "Супер, продолжайте в том же духе!" }
+    { name: "Ольга", comment: "Супер, продолжайте в том же духе!" },
+    {name: "Олег", comment: "Молодцы!"},
+    {name: "Jack", comment: "Super!"},
+    {name: "Mikle", comment: "Need more details"},
+    {name: "Veronika", comment: "Well done!"},
+    {name: "Jessica", comment: "Looks beautiful!"},
+    {name: "Harry", comment: "It's magic"}
 ];
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
@@ -149,7 +151,5 @@ function createCommentDiv() {
     randomDiv.appendChild(h2Comment);
     let allUserComments = document.querySelector('.allUser_comments')
     allUserComments.appendChild(randomDiv)
-    /* allUserComments.classList.add('show'); */
-    /* document.getElementById('container').appendChild(div); */
 }
-setInterval(createCommentDiv, 5000);
+setInterval(createCommentDiv, 20000);
