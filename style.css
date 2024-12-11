@@ -241,7 +241,7 @@ body {
 .user_comment {
 }
 .allUser_comments {
-    width: 360px;
+    max-width: 360px;
     max-height: 150px;
     padding: 20px;
     border-radius: 10px;
@@ -294,11 +294,45 @@ body {
         font-size: 30px;
     }
 }
+@media (max-width: 500px) {
+    .box_comments {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .comments {
+        max-width: 100%;
+    }
+    .comments_name {
+        max-width: 100%;
+    }
+    .send {
+        max-width: 100%;
+    }
+    .allUser_comments {
+        max-width: 100%;
+        /* margin-left: 10px;
+        margin-right: 10px; */
+        background: transparent;
+    }
+    .randomDiv {
+        max-width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .right_comments {
+        max-width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
 @media (max-width: 400px) {
     .boxForTemp, .boxWind, .boxCloud {
         font-size: 25px;
     }
     .boxForTemp {
         gap: 5px;
+    }
+    .randomDiv, .right_comments {
+        font-size: 18px;
     }
 }
