@@ -309,7 +309,7 @@ body {
         max-width: 100%;
     }
     .allUser_comments {
-        max-width: 100%;
+        width: 100%;
         /* margin-left: 10px;
         margin-right: 10px; */
         background: transparent;
