@@ -241,7 +241,7 @@ body {
 .user_comment {
 }
 .allUser_comments {
-    max-width: 360px;
+    width: 360px;
     max-height: 150px;
     padding: 20px;
     border-radius: 10px;
@@ -309,7 +309,7 @@ body {
         max-width: 100%;
     }
     .allUser_comments {
-        width: 100%;
+        max-width: 100%;
         /* margin-left: 10px;
         margin-right: 10px; */
         background: transparent;
